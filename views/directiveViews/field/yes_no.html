@@ -1,0 +1,57 @@
+<div class="field row radio" ng-click="setActiveField(field._id, index, true)">
+    <div class="col-xs-12 field-title" ng-style="{'color': design.colors.questionColor}">
+        <h3 class="row">
+            <span class="fa fa-angle-double-right"></span> {{field.title}} 
+            <span class="required-error" ng-show="field.required && !field.fieldValue">
+                *(required)
+            </span>
+        </h3>
+        <p class="row">
+            {{field.description}}
+        </p>
+    </div>
+
+    <div class="col-xs-12 field-input">
+        <div class="row">
+            <label class="btn btn-default col-md-2 col-sm-3 col-xs-4"
+		style="background: rgba(0,0,0,0.1); text-align:left;">
+                <input type="radio" value="true" 
+					class="focusOn"
+                    style="opacity: 0; margin-left: 0px;"
+					ng-focus="setActiveField(field._id, index, true)"	
+					ng-model="field.fieldValue" 
+					ng-model-options="{ debounce: 250 }" 
+					ng-required="field.required" 
+					ng-click="$root.nextField()"
+                    ng-disabled="field.disabled" />
+				<div class="letter">
+					Y
+				</div>               	
+				<span>Yes</span>
+				<i ng-show="field.fieldValue === 'true'" class="fa fa-check" aria-hidden="true"></i>
+            </label>
+	</div>
+	
+	<div class="row" style="margin-top: 10px;">
+            <label class="btn btn-default col-md-2 col-sm-3 col-xs-4" 
+		        style="background: rgba(0,0,0,0.1); text-align:left;">
+	
+                <input type="radio" value="false" 
+			        style="opacity:0; margin-left:0px;"
+			        ng-focus="setActiveField(field._id, index, true)"
+			        ng-model="field.fieldValue" 
+			        ng-model-options="{ debounce: 250 }" 
+			        ng-required="field.required" 
+			        ng-click="$root.nextField()"
+                    ng-disabled="field.disabled"/>
+                	
+			<div class="letter">
+                  		N
+			</div>
+			<span>No</span>
+                	<i ng-show="field.fieldValue === 'false'" class="fa fa-check" aria-hidden="true"></i>
+            </label>
+        </div>
+    </div>
+</div>
+<br>

@@ -1,0 +1,34 @@
+<div class="field row" ng-click="setActiveField(field._id, index, true)">
+    <div class="col-xs-12 field-title" ng-style="{'color': design.colors.questionColor}"><h3><span class="fa fa-angle-double-right"></span> {{field.title}} <span class="required-error" ng-show="field.required && !field.fieldValue">*(required)</span></h3></div>
+    <div class="col-xs-12 field-input">
+        <textarea class="textarea" type="text" 
+        	ng-model="field.fieldValue" 
+        	ng-model-options="{ debounce: 250 }"  
+        	ng-class="{ 'no-border': !!field.fieldValue }"
+            value="{{field.fieldValue}}" 
+        	class="focusOn"
+            ng-required="field.required" 
+        	ng-disabled="field.disabled"
+        	ng-focus="setActiveField(field._id, index, true)">
+        </textarea>       
+    </div>
+</div>
+<div class="col-xs-12 row">
+	<div class="btn btn-lg btn-default row-fluid"
+        style="padding: 4px; margin-top:8px; background: rgba(255,255,255,0.5)">
+		
+		<button ng-disabled="!field.fieldValue"
+                ng-click="$root.nextField()"
+                ng-style="{'background-color':design.colors.buttonColor, 'color':design.colors.buttonTextColor}"
+                class="btn col-sm-5 col-xs-5">
+
+        	OK <i class="fa fa-check"></i>
+        </button>
+		<div class="col-sm-3 col-xs-6" style="margin-top:0.2em">
+        	<small style="color:#ddd; font-size:70%">
+            	press ENTER
+         	</small>
+    	</div>
+    </div>
+</div>
+
