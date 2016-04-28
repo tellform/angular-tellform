@@ -1,8 +1,8 @@
 {
-  "name": "tellform Form UI",
-  "description": "Opensource alternative to TypeForm",
+  "name": "Tellform Form UI",
+  "description": "Frontend UI for TellForm",
   "version": "1.2.1",
-  "homepage": "https://github.com/whitef0x0/tellform",
+  "homepage": "https://github.com/tellform/angular-tellform",
   "authors": [
     "David Baldwynn <polydaic@gmail.com> (http://baldwynn.me)",
     "Samuel Laulhau <sam@lalop.co> (https://samuellaulhau.fr)"
@@ -31,7 +31,8 @@
   },
   "resolutions": {
     "angular-bootstrap": "^0.14.0",
-    "angular": "1.4.x"
+    "angular": "1.4.x",
+    "font-awesome": "~4.6.1"
   },
   "overrides": {
     "BOWER-PACKAGE": {

@@ -1,10 +1,10 @@
 
-angular.module('NodeForm', [
+angular.module('TellForm', [
     'duScroll', 'ui.select', 'cgBusy', 'ngSanitize', 'vButton', 'ngResource',
     'ui.router', 'ui.bootstrap', 'ui.utils', 'ngRaven'
 ]);
-angular.module('forms', ['ngResource', 'NodeForm.templates']);
-angular.module('NodeForm').requires.push('forms');
+angular.module('forms', ['ngResource', 'TellForm.templates']);
+angular.module('TellForm').requires.push('forms');
 
 angular.module('forms').factory('Auth', [
   function() {

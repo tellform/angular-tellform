@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 		ngAnnotate: {
 			production: {
 				files: {
-					'dist/form.js': [
+					'demo/dist/form.js': [
 						'config/**/*.js', 'controllers/**/*.js',
 						'directives/**/*.js', 'services/**/*.js',
 						'dist/template.js'
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         html2js: {
 		  options: {
 		  	base: '',
-			module: 'NodeForm.templates',
+			module: 'TellForm.templates',
 		    singleModule: true,
 			rename: function (moduleName) {
 				return 'modules/forms/base/' + moduleName;
@@ -27,21 +27,21 @@ module.exports = function(grunt) {
 		  },
 		  form: {
 			src: ['views/**/*.html'],
-		    dest: 'dist/template.js'
+		    dest: 'demo/dist/template.js'
 		  }
 	    },
 	    cssmin: {
 		  combine: {
 			  files: {
-				  'dist/form.css': 'css/**/*.css'
+				  'demo/dist/form.css': 'css/**/*.css'
 			  }
 		  }
-	    },
+	    }
 	});
 
 	// Making grunt default to force in order not to break the project.
 	grunt.option('force', true);
 
 	// Default task(s).
-	grunt.registerTask('default', ['html2js:form', 'ngAnnotate', 'cssmin']);
+	grunt.registerTask('build', ['html2js:form', 'ngAnnotate', 'cssmin']);
 };
