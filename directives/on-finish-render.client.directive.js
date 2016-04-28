@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('forms').directive('onFinishRender', function ($rootScope, $timeout) {
+module.exports = function ($rootScope, $timeout) {
     return {
         restrict: 'A',
         link: function (scope, element, attrs) {
@@ -24,4 +24,4 @@ angular.module('forms').directive('onFinishRender', function ($rootScope, $timeo
             }
         }
     };
-});
+};

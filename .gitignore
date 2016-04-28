@@ -1,2 +1,6 @@
-dist
+demo/dist
 demo/lib
+node_modules
+demo/node_modules
+demo/modules
+demo/bundle.js

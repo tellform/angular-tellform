@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('forms').directive('onEnterKey', ['$rootScope', function($rootScope){
+module.exports = function($rootScope){
 	return {
 		restrict: 'A', 
 		link: function($scope, $element, $attrs) {
@@ -17,4 +17,4 @@ angular.module('forms').directive('onEnterKey', ['$rootScope', function($rootSco
 			});
 		}
 	};	
-}]);
+};
