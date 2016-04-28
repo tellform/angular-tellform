@@ -8,8 +8,7 @@ var __indexOf = [].indexOf || function(item) {
     return -1;
 };
 
-angular.module('forms').directive('fieldDirective', ['$http', '$compile', '$rootScope', '$templateCache',
-    function($http, $compile, $rootScope, $templateCache) {
+module.exports = function($http, $compile, $rootScope, $templateCache) {
 
     var getTemplateUrl = function(fieldType) {
         var type = fieldType;
@@ -83,6 +82,6 @@ angular.module('forms').directive('fieldDirective', ['$http', '$compile', '$root
             var template = getTemplateUrl(fieldType);
            	element.html(template).show();
             $compile(element.contents())(scope);
-        },
+        }
     };
-}]);
+};

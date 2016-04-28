@@ -1,18 +1,16 @@
 'use strict';
 
 //Forms service used for communicating with the forms REST endpoints
-angular.module('forms').service('CurrentForm',
-	function(){
+module.exports = function() {
 
-		//Private variables
-		var _form = {};
+	//Private variables
+	var _form = {};
 
-		//Public Methods
-		this.getForm = function() {
-	        return _form;
-	    };
-	    this.setForm = function(form) {
-	        _form = form;
-	    };
-    }
-);
+	//Public Methods
+	this.getForm = function () {
+		return _form;
+	};
+	this.setForm = function (form) {
+		_form = form;
+	};
+};

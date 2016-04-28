@@ -1,403 +1,373 @@
 'use strict';
 
-// Configuring the Forms drop-down menus
-angular.module('forms').filter('formValidity',
-function(){
-	return function(formObj){
-		if(formObj && formObj.form_fields && formObj.visible_form_fields){
-
-			//get keys
-			var formKeys = Object.keys(formObj);
-
-			//we only care about things that don't start with $
-			var fieldKeys = formKeys.filter(function(key){
-				return key[0] !== '$';
-			});
-
-			var fields = formObj.form_fields;
-
-			var valid_count = fields.filter(function(field){
-				if(typeof field === 'object' && field.fieldType !== 'statement' && field.fieldType !== 'rating'){
-					return !!(field.fieldValue);
-				}
-
-			}).length;
-			return valid_count - (formObj.form_fields.length - formObj.visible_form_fields.length);
-		}
-		return 0;
-	};
-});
-
-'use strict';
-
 // SubmitForm controller
-angular.module('forms').controller('SubmitFormController', ['$scope', '$rootScope', '$state', 'myForm', 'Auth',
-	function($scope, $rootScope, $state, myForm, Auth) {
-		$scope.authentication = Auth;
-		$scope.myform = myForm;
+// angular.module('forms').controller('SubmitFormController', ['$scope', '$rootScope', '$state', 'myForm', 'Auth',
+// 	function($scope, $rootScope, $state, myForm, Auth) {
+// 		$scope.authentication = Auth;
+// 		$scope.myform = myForm;
+//
+// 		if(!$scope.myform.isLive){
+// 			// Show navbar if form is not public AND user IS loggedin
+// 			if($scope.authentication.isAuthenticated()){
+// 				$scope.hideNav = $rootScope.hideNav = false;
+// 			}
+// 			// Redirect if  form is not public user IS NOT loggedin
+// 			else {
+// 				$scope.hideNav = $rootScope.hideNav = true;
+// 				$state.go('access_denied');
+// 			}
+// 		}else{
+// 			$scope.hideNav = $rootScope.hideNav = true;
+// 		}
+//
+// 	}
+// ]);
 
-		if(!$scope.myform.isLive){
-			// Show navbar if form is not public AND user IS loggedin
-			if($scope.authentication.isAuthenticated()){
-				$scope.hideNav = $rootScope.hideNav = false;
-			}
-			// Redirect if  form is not public user IS NOT loggedin
-			else {
-				$scope.hideNav = $rootScope.hideNav = true;
-				$state.go('access_denied');
-			}
-		}else{
-			$scope.hideNav = $rootScope.hideNav = true;
-		}
-
-	}
-]);
-
-'use strict';
-
-angular.module('forms').directive('fieldIconDirective', function() {
-    
-    return {
-        template: '<i class="{{typeIcon}}"></i>',
-        restrict: 'E',
-        scope: {
-            typeName: '@'
-        },
-        controller: ["$scope", function($scope){
-        	var iconTypeMap = {
-				'textfield': 'fa fa-pencil-square-o',
-				'dropdown': 'fa fa-th-list',
-				'date': 'fa fa-calendar',
-				'checkbox': 'fa fa-check-square-o',
-				'radio': 'fa fa-dot-circle-o',
-				'email': 'fa fa-envelope-o',
-				'textarea': 'fa fa-pencil-square',
-				'legal': 'fa fa-legal',
-				'file': 'fa fa-cloud-upload',
-				'rating': 'fa fa-star-half-o',
-				'link': 'fa fa-link',
-				'scale': 'fa fa-sliders',
-				'stripe': 'fa fa-credit-card',
-				'statement': 'fa fa-quote-left',
-				'yes_no': 'fa fa-toggle-on',
-				'number': 'fa fa-slack'
-			};
-			$scope.typeIcon = iconTypeMap[$scope.typeName];
-        }],
-    };
-});
-'use strict';
-
-// coffeescript's for in loop
-var __indexOf = [].indexOf || function(item) {
-    for (var i = 0, l = this.length; i < l; i++) {
-        if (i in this && this[i] === item) return i;
-    }
-    return -1;
-};
-
-angular.module('forms').directive('fieldDirective', ['$http', '$compile', '$rootScope', '$templateCache',
-    function($http, $compile, $rootScope, $templateCache) {
-
-    var getTemplateUrl = function(fieldType) {
-        var type = fieldType;
-        var templateUrl = 'modules/forms/base/views/directiveViews/field/';
-        var supported_fields = [
-            'textfield',
-            'textarea',
-            'date',
-            'dropdown',
-            'hidden',
-            'password',
-            'radio',
-            'legal',
-            'statement',
-            'rating',
-            'yes_no',
-            'number',
-            'natural'
-        ];
-	if (__indexOf.call(supported_fields, type) >= 0) {
-            templateUrl = templateUrl+type+'.html';
-        }
-
-   		return $templateCache.get(templateUrl);
-    };
-
-    return {
-        template: '<div>{{field.title}}</div>',
-        restrict: 'E',
-        scope: {
-            field: '=',
-            required: '&',
-            design: '=',
-            index: '=',
-        },
-        link: function(scope, element) {
-            scope.setActiveField = $rootScope.setActiveField;
-
-            //Set format only if field is a date
-            if(scope.field.fieldType === 'date'){
-                scope.dateOptions = {
-                    changeYear: true,
-                    changeMonth: true,
-                    altFormat: 'mm/dd/yyyy',
-                    yearRange: '1900:-0',
-                    defaultDate: 0,
-                };
-            }
-
-            var fieldType = scope.field.fieldType;
-
-			if(scope.field.fieldType === 'number' || scope.field.fieldType === 'textfield' || scope.field.fieldType === 'email' || scope.field.fieldType === 'link'){
-				switch(scope.field.fieldType){
-					case 'textfield':
-						scope.field.input_type = 'text';
-						break;
-					case 'email':
-						scope.field.input_type = 'email';
-						scope.field.placeholder = 'joesmith@example.com';
-						break;
-					case 'number':
-                        scope.field.input_type = 'number';
-                        break;
-                    default:
-						scope.field.input_type = 'url';
-						scope.field.placeholder = 'http://example.com';
-						break;
-				}
-				fieldType = 'textfield';
-			}
-            var template = getTemplateUrl(fieldType);
-           	element.html(template).show();
-            $compile(element.contents())(scope);
-        },
-    };
-}]);
-
-'use strict';
-
-angular.module('forms').directive('onEnterKey', ['$rootScope', function($rootScope){
-	return {
-		restrict: 'A', 
-		link: function($scope, $element, $attrs) {
-			$element.bind('keydown keypress', function(event) {
-				var keyCode = event.which || event.keyCode;
-				console.log($attrs.onEnterKey);		
-				if(keyCode === 13) {
-					$rootScope.$apply(function() {
-						$rootScope.$eval($attrs.onEnterKey);
-					});
-					
-					event.preventDefault();
-				}
-			});
-		}
-	};	
-}]);
-
-'use strict';
-
-angular.module('forms').directive('onFinishRender', ["$rootScope", "$timeout", function ($rootScope, $timeout) {
-    return {
-        restrict: 'A',
-        link: function (scope, element, attrs) {
-
-            //Don't do anything if we don't have a ng-repeat on the current element
-            if(!element.attr('ng-repeat') && !element.attr('data-ng-repeat')){
-                return;
-            }
-
-            var broadcastMessage = attrs.onFinishRender || 'ngRepeat';
-
-            if(scope.$first && !scope.$last) {
-                scope.$evalAsync(function () {
-                    $rootScope.$broadcast(broadcastMessage+' Started');
-                });
-            }else if(scope.$last) {
-            	scope.$evalAsync(function () {
-                    // console.log(broadcastMessage+'Finished');
-            	    $rootScope.$broadcast(broadcastMessage+' Finished');
-                });
-            }
-        }
-    };
-}]);
-
-'use strict';
-
-angular.module('forms').directive('submitFormDirective', ['$http', 'TimeCounter', '$filter', '$rootScope', 'Auth',
-    function ($http, TimeCounter, $filter, $rootScope, Auth) {
-        return {
-            templateUrl: 'modules/forms/base/views/directiveViews/form/submit-form.client.view.html',                restrict: 'E',
-            scope: {
-                myform:'='
-            },
-            controller: ["$document", "$window", "$scope", function($document, $window, $scope){
-                $scope.authentication = $rootScope.authentication;
-		        $scope.noscroll = false;
-                $scope.forms = {};
-                $scope.form_fields_count = $scope.myform.visible_form_fields.filter(function(field){
-                    if(field.fieldType === 'statement' || field.fieldType === 'rating'){
-                        return false;
-                    }
-                    return true;
-                }).length;
-
-                $scope.reloadForm = function(){
-                    //Reset Form
-                    $scope.myform.submitted = false;
-                    $scope.myform.form_fields = _.chain($scope.myform.visible_form_fields).map(function(field){
-                            field.fieldValue = '';
-                            return field;
-                        }).value();
-
-					$scope.loading = false;
-                    $scope.error = '';
-
-                    $scope.selected = {
-                        _id: '',
-                        index: 0
-                    };
-                    $scope.setActiveField($scope.myform.visible_form_fields[0]._id, 0, false);
-
-                    console.log($scope.selected);
-                    //Reset Timer
-                    TimeCounter.restartClock();
-                };
-
-				$window.onscroll = function(){
-            		$scope.scrollPos = document.body.scrollTop || document.documentElement.scrollTop || 0;
-					var elemBox = document.getElementsByClassName('activeField')[0].getBoundingClientRect();
-					$scope.fieldTop = elemBox.top;
-					$scope.fieldBottom = elemBox.bottom;
-
-                    //console.log($scope.forms.myForm);
-
-                    if(!$scope.noscroll){
-                        //Focus on submit button
-                        if( $scope.selected.index === $scope.myform.form_fields.length-1 && $scope.fieldBottom < 200){
-                            var field_index = $scope.selected.index+1;
-                            var field_id = 'submit_field';
-                            $scope.setActiveField(field_id, field_index, false);
-                        }
-                        //Focus on field above submit button
-                        else if($scope.selected.index === $scope.myform.form_fields.length){
-                            if($scope.fieldTop > 200){
-                                var field_index = $scope.selected.index-1;
-                                var field_id = $scope.myform.form_fields[field_index]._id;
-                                $scope.setActiveField(field_id, field_index, false);
-                            }
-                        }else if( $scope.fieldBottom < 0){
-                            var field_index = $scope.selected.index+1;
-                            var field_id = $scope.myform.form_fields[field_index]._id;
-                            $scope.setActiveField(field_id, field_index, false);
-                        }else if ( $scope.selected.index !== 0 && $scope.fieldTop > 0) {
-                            var field_index = $scope.selected.index-1;
-                            var field_id = $scope.myform.form_fields[field_index]._id;
-                            $scope.setActiveField(field_id, field_index, false);
-                        }
-                        //console.log('$scope.selected.index: '+$scope.selected.index);
-					    //console.log('scroll pos: '+$scope.scrollPos+' fieldTop: '+$scope.fieldTop+' fieldBottom: '+$scope.fieldBottom);
-            		    $scope.$apply();
-                    }
-        		};
-
-                /*
-                ** Field Controls
-                */
-                $scope.setActiveField = $rootScope.setActiveField = function(field_id, field_index, animateScroll) {
-                    if($scope.selected === null || $scope.selected._id === field_id){
-						console.log('not scrolling');
-						console.log($scope.selected);
-						return;
-		    		}
-                    console.log('field_id: '+field_id);
-                    console.log('field_index: '+field_index);
-                    console.log($scope.selected);
-
-                    $scope.selected._id = field_id;
-                    $scope.selected.index = field_index;
-
-                    if(animateScroll){
-                        $scope.noscroll=true;
-                        setTimeout(function() {
-                            $document.scrollToElement(angular.element('.activeField'), -10, 200).then(function(){
-                                $scope.noscroll = false;
-                                document.querySelectorAll('.activeField .focusOn')[0].focus();
-                            });
-                        }, 20);
-                    }
-                };
-
-                $rootScope.nextField = $scope.nextField = function(){
-                    console.log('nextfield');
-                    //console.log($scope.selected.index);
-					//console.log($scope.myform.form_fields.length-1);
-					if($scope.selected.index < $scope.myform.form_fields.length-1){
-                        var selected_index = $scope.selected.index+1;
-                        var selected_id = $scope.myform.form_fields[selected_index]._id;
-                        $rootScope.setActiveField(selected_id, selected_index, true);
-                    } else if($scope.selected.index === $scope.myform.form_fields.length-1) {
-						var selected_index = $scope.selected.index+1;
-						var selected_id = 'submit_field';
-						$rootScope.setActiveField(selected_id, selected_index, true);
-					}
-                };
-
-                $rootScope.prevField = $scope.prevField = function(){
-                    if($scope.selected.index > 0){
-                        var selected_index = $scope.selected.index - 1;
-                        var selected_id = $scope.myform.form_fields[selected_index]._id;
-                        $scope.setActiveField(selected_id, selected_index, true);
-                    }
-                };
-
-                /*
-                ** Form Display Functions
-                */
-                $scope.exitStartPage = function(){
-                    $scope.myform.startPage.showStart = false;
-                    if($scope.myform.form_fields.length > 0){
-                        $scope.selected._id = $scope.myform.form_fields[0]._id;
-                    }
-                };
-
-                $scope.submitForm = function(){
-                    var _timeElapsed = TimeCounter.stopClock();
-					$scope.loading = true;
-                    var form = _.cloneDeep($scope.myform);
-                    form.timeElapsed = _timeElapsed;
-
-                    form.percentageComplete = $filter('formValidity')($scope.myform)/$scope.myform.visible_form_fields.length*100;
-                    delete form.visible_form_fields;
-
-                    $scope.submitPromise = $http.post('/forms/'+$scope.myform._id, form)
-                        .success(function(data, status, headers){
-                            console.log('form submitted successfully');
-                            setTimeout(function() {
-                                $scope.myform.submitted = true;
-                                $scope.loading = false;
-                            }, 20);
-                        })
-                        .error(function(error){
-                            setTimeout(function(){
-                                $scope.loading = false;
-                                console.log(error);
-                                $scope.error = error.message;
-                            }, 20);
-                        });
-                };
-
-                //Load our form when the page is ready
-                //angular.element(document).ready(function() {
-                    $scope.reloadForm();
-                //});
-
-            }]
-        };
-    }
-]);
+// 'use strict';
+//
+// angular.module('forms').directive('fieldIconDirective', function() {
+//
+//     return {
+//         template: '<i class="{{typeIcon}}"></i>',
+//         restrict: 'E',
+//         scope: {
+//             typeName: '@'
+//         },
+//         controller: ["$scope", function($scope){
+//         	var iconTypeMap = {
+// 				'textfield': 'fa fa-pencil-square-o',
+// 				'dropdown': 'fa fa-th-list',
+// 				'date': 'fa fa-calendar',
+// 				'checkbox': 'fa fa-check-square-o',
+// 				'radio': 'fa fa-dot-circle-o',
+// 				'email': 'fa fa-envelope-o',
+// 				'textarea': 'fa fa-pencil-square',
+// 				'legal': 'fa fa-legal',
+// 				'file': 'fa fa-cloud-upload',
+// 				'rating': 'fa fa-star-half-o',
+// 				'link': 'fa fa-link',
+// 				'scale': 'fa fa-sliders',
+// 				'stripe': 'fa fa-credit-card',
+// 				'statement': 'fa fa-quote-left',
+// 				'yes_no': 'fa fa-toggle-on',
+// 				'number': 'fa fa-slack'
+// 			};
+// 			$scope.typeIcon = iconTypeMap[$scope.typeName];
+//         }],
+//     };
+// });
+// 'use strict';
+//
+// // coffeescript's for in loop
+// var __indexOf = [].indexOf || function(item) {
+//     for (var i = 0, l = this.length; i < l; i++) {
+//         if (i in this && this[i] === item) return i;
+//     }
+//     return -1;
+// };
+//
+// angular.module('forms').directive('fieldDirective', ['$http', '$compile', '$rootScope', '$templateCache',
+//     function($http, $compile, $rootScope, $templateCache) {
+//
+//     var getTemplateUrl = function(fieldType) {
+//         var type = fieldType;
+//         var templateUrl = 'modules/forms/base/views/directiveViews/field/';
+//         var supported_fields = [
+//             'textfield',
+//             'textarea',
+//             'date',
+//             'dropdown',
+//             'hidden',
+//             'password',
+//             'radio',
+//             'legal',
+//             'statement',
+//             'rating',
+//             'yes_no',
+//             'number',
+//             'natural'
+//         ];
+// 	if (__indexOf.call(supported_fields, type) >= 0) {
+//             templateUrl = templateUrl+type+'.html';
+//         }
+//
+//    		return $templateCache.get(templateUrl);
+//     };
+//
+//     return {
+//         template: '<div>{{field.title}}</div>',
+//         restrict: 'E',
+//         scope: {
+//             field: '=',
+//             required: '&',
+//             design: '=',
+//             index: '=',
+//         },
+//         link: function(scope, element) {
+//             scope.setActiveField = $rootScope.setActiveField;
+//
+//             //Set format only if field is a date
+//             if(scope.field.fieldType === 'date'){
+//                 scope.dateOptions = {
+//                     changeYear: true,
+//                     changeMonth: true,
+//                     altFormat: 'mm/dd/yyyy',
+//                     yearRange: '1900:-0',
+//                     defaultDate: 0,
+//                 };
+//             }
+//
+//             var fieldType = scope.field.fieldType;
+//
+// 			if(scope.field.fieldType === 'number' || scope.field.fieldType === 'textfield' || scope.field.fieldType === 'email' || scope.field.fieldType === 'link'){
+// 				switch(scope.field.fieldType){
+// 					case 'textfield':
+// 						scope.field.input_type = 'text';
+// 						break;
+// 					case 'email':
+// 						scope.field.input_type = 'email';
+// 						scope.field.placeholder = 'joesmith@example.com';
+// 						break;
+// 					case 'number':
+//                         scope.field.input_type = 'number';
+//                         break;
+//                     default:
+// 						scope.field.input_type = 'url';
+// 						scope.field.placeholder = 'http://example.com';
+// 						break;
+// 				}
+// 				fieldType = 'textfield';
+// 			}
+//             var template = getTemplateUrl(fieldType);
+//            	element.html(template).show();
+//             $compile(element.contents())(scope);
+//         },
+//     };
+// }]);
+//
+// 'use strict';
+//
+// angular.module('forms').directive('onEnterKey', ['$rootScope', function($rootScope){
+// 	return {
+// 		restrict: 'A',
+// 		link: function($scope, $element, $attrs) {
+// 			$element.bind('keydown keypress', function(event) {
+// 				var keyCode = event.which || event.keyCode;
+// 				console.log($attrs.onEnterKey);
+// 				if(keyCode === 13) {
+// 					$rootScope.$apply(function() {
+// 						$rootScope.$eval($attrs.onEnterKey);
+// 					});
+//
+// 					event.preventDefault();
+// 				}
+// 			});
+// 		}
+// 	};
+// }]);
+//
+// 'use strict';
+//
+// angular.module('forms').directive('onFinishRender', ["$rootScope", "$timeout", function ($rootScope, $timeout) {
+//     return {
+//         restrict: 'A',
+//         link: function (scope, element, attrs) {
+//
+//             //Don't do anything if we don't have a ng-repeat on the current element
+//             if(!element.attr('ng-repeat') && !element.attr('data-ng-repeat')){
+//                 return;
+//             }
+//
+//             var broadcastMessage = attrs.onFinishRender || 'ngRepeat';
+//
+//             if(scope.$first && !scope.$last) {
+//                 scope.$evalAsync(function () {
+//                     $rootScope.$broadcast(broadcastMessage+' Started');
+//                 });
+//             }else if(scope.$last) {
+//             	scope.$evalAsync(function () {
+//                     // console.log(broadcastMessage+'Finished');
+//             	    $rootScope.$broadcast(broadcastMessage+' Finished');
+//                 });
+//             }
+//         }
+//     };
+// }]);
+//
+// 'use strict';
+//
+// angular.module('forms').directive('submitFormDirective', ['$http', 'TimeCounter', '$filter', '$rootScope', 'Auth',
+//     function ($http, TimeCounter, $filter, $rootScope, Auth) {
+//         return {
+//             templateUrl: 'modules/forms/base/views/directiveViews/form/submit-form.client.view.html',                restrict: 'E',
+//             scope: {
+//                 myform:'='
+//             },
+//             controller: ["$document", "$window", "$scope", function($document, $window, $scope){
+//                 $scope.authentication = $rootScope.authentication;
+// 		        $scope.noscroll = false;
+//                 $scope.forms = {};
+//                 $scope.form_fields_count = $scope.myform.visible_form_fields.filter(function(field){
+//                     if(field.fieldType === 'statement' || field.fieldType === 'rating'){
+//                         return false;
+//                     }
+//                     return true;
+//                 }).length;
+//
+//                 $scope.reloadForm = function(){
+//                     //Reset Form
+//                     $scope.myform.submitted = false;
+//                     $scope.myform.form_fields = _.chain($scope.myform.visible_form_fields).map(function(field){
+//                             field.fieldValue = '';
+//                             return field;
+//                         }).value();
+//
+// 					$scope.loading = false;
+//                     $scope.error = '';
+//
+//                     $scope.selected = {
+//                         _id: '',
+//                         index: 0
+//                     };
+//                     $scope.setActiveField($scope.myform.visible_form_fields[0]._id, 0, false);
+//
+//                     console.log($scope.selected);
+//                     //Reset Timer
+//                     TimeCounter.restartClock();
+//                 };
+//
+// 				$window.onscroll = function(){
+//             		$scope.scrollPos = document.body.scrollTop || document.documentElement.scrollTop || 0;
+// 					var elemBox = document.getElementsByClassName('activeField')[0].getBoundingClientRect();
+// 					$scope.fieldTop = elemBox.top;
+// 					$scope.fieldBottom = elemBox.bottom;
+//
+//                     //console.log($scope.forms.myForm);
+//
+//                     if(!$scope.noscroll){
+//                         //Focus on submit button
+//                         if( $scope.selected.index === $scope.myform.form_fields.length-1 && $scope.fieldBottom < 200){
+//                             var field_index = $scope.selected.index+1;
+//                             var field_id = 'submit_field';
+//                             $scope.setActiveField(field_id, field_index, false);
+//                         }
+//                         //Focus on field above submit button
+//                         else if($scope.selected.index === $scope.myform.form_fields.length){
+//                             if($scope.fieldTop > 200){
+//                                 var field_index = $scope.selected.index-1;
+//                                 var field_id = $scope.myform.form_fields[field_index]._id;
+//                                 $scope.setActiveField(field_id, field_index, false);
+//                             }
+//                         }else if( $scope.fieldBottom < 0){
+//                             var field_index = $scope.selected.index+1;
+//                             var field_id = $scope.myform.form_fields[field_index]._id;
+//                             $scope.setActiveField(field_id, field_index, false);
+//                         }else if ( $scope.selected.index !== 0 && $scope.fieldTop > 0) {
+//                             var field_index = $scope.selected.index-1;
+//                             var field_id = $scope.myform.form_fields[field_index]._id;
+//                             $scope.setActiveField(field_id, field_index, false);
+//                         }
+//                         //console.log('$scope.selected.index: '+$scope.selected.index);
+// 					    //console.log('scroll pos: '+$scope.scrollPos+' fieldTop: '+$scope.fieldTop+' fieldBottom: '+$scope.fieldBottom);
+//             		    $scope.$apply();
+//                     }
+//         		};
+//
+//                 /*
+//                 ** Field Controls
+//                 */
+//                 $scope.setActiveField = $rootScope.setActiveField = function(field_id, field_index, animateScroll) {
+//                     if($scope.selected === null || $scope.selected._id === field_id){
+// 						console.log('not scrolling');
+// 						console.log($scope.selected);
+// 						return;
+// 		    		}
+//                     console.log('field_id: '+field_id);
+//                     console.log('field_index: '+field_index);
+//                     console.log($scope.selected);
+//
+//                     $scope.selected._id = field_id;
+//                     $scope.selected.index = field_index;
+//
+//                     if(animateScroll){
+//                         $scope.noscroll=true;
+//                         setTimeout(function() {
+//                             $document.scrollToElement(angular.element('.activeField'), -10, 200).then(function(){
+//                                 $scope.noscroll = false;
+//                                 document.querySelectorAll('.activeField .focusOn')[0].focus();
+//                             });
+//                         }, 20);
+//                     }
+//                 };
+//
+//                 $rootScope.nextField = $scope.nextField = function(){
+//                     console.log('nextfield');
+//                     //console.log($scope.selected.index);
+// 					//console.log($scope.myform.form_fields.length-1);
+// 					if($scope.selected.index < $scope.myform.form_fields.length-1){
+//                         var selected_index = $scope.selected.index+1;
+//                         var selected_id = $scope.myform.form_fields[selected_index]._id;
+//                         $rootScope.setActiveField(selected_id, selected_index, true);
+//                     } else if($scope.selected.index === $scope.myform.form_fields.length-1) {
+// 						var selected_index = $scope.selected.index+1;
+// 						var selected_id = 'submit_field';
+// 						$rootScope.setActiveField(selected_id, selected_index, true);
+// 					}
+//                 };
+//
+//                 $rootScope.prevField = $scope.prevField = function(){
+//                     if($scope.selected.index > 0){
+//                         var selected_index = $scope.selected.index - 1;
+//                         var selected_id = $scope.myform.form_fields[selected_index]._id;
+//                         $scope.setActiveField(selected_id, selected_index, true);
+//                     }
+//                 };
+//
+//                 /*
+//                 ** Form Display Functions
+//                 */
+//                 $scope.exitStartPage = function(){
+//                     $scope.myform.startPage.showStart = false;
+//                     if($scope.myform.form_fields.length > 0){
+//                         $scope.selected._id = $scope.myform.form_fields[0]._id;
+//                     }
+//                 };
+//
+//                 $scope.submitForm = function(){
+//                     var _timeElapsed = TimeCounter.stopClock();
+// 					$scope.loading = true;
+//                     var form = _.cloneDeep($scope.myform);
+//                     form.timeElapsed = _timeElapsed;
+//
+//                     form.percentageComplete = $filter('formValidity')($scope.myform)/$scope.myform.visible_form_fields.length*100;
+//                     delete form.visible_form_fields;
+//
+//                     $scope.submitPromise = $http.post('/forms/'+$scope.myform._id, form)
+//                         .success(function(data, status, headers){
+//                             console.log('form submitted successfully');
+//                             setTimeout(function() {
+//                                 $scope.myform.submitted = true;
+//                                 $scope.loading = false;
+//                             }, 20);
+//                         })
+//                         .error(function(error){
+//                             setTimeout(function(){
+//                                 $scope.loading = false;
+//                                 console.log(error);
+//                                 $scope.error = error.message;
+//                             }, 20);
+//                         });
+//                 };
+//
+//                 //Load our form when the page is ready
+//                 //angular.element(document).ready(function() {
+//                     $scope.reloadForm();
+//                 //});
+//
+//             }]
+//         };
+//     }
+// ]);
 
 'use strict';
 
