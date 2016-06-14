@@ -24,11 +24,13 @@ angular.module('angular-tellform', [
 
 angular.module('angular-tellform', ['ngResource', 'angular-tellform.templates']);
 
-//angular.module('angular-tellform').requires.push('forms');
-
 angular.module('angular-tellform').filter('formValidity', require('../config/forms.client.config.js'));
 
 //Directives
+angular.module('angular-tellform').directive('angularTellform',
+    ['$rootScope', '$state', 'myForm', 'Auth',
+        require('../directives/render-form.client.directive.js')]);
+
 angular.module('angular-tellform').directive('fieldDirective',
     ['$http', '$compile', '$rootScope', '$templateCache',
         require('../directives/field.client.directive.js')]);
@@ -67,10 +69,6 @@ angular.module('angular-tellform').factory('$state', [function() {
 //Constants
 angular.module('angular-tellform').constant('FORM_URL', '/form/:formId');
 
-//Controllers
-angular.module('angular-tellform').controller('SubmitFormController',
-    ['$scope', '$rootScope', '$state', 'myForm', 'Auth',
-        require('../controllers/submit-form.client.controller.js') ] );
 
 angular.element(document).ready(function() {
 	//Then init the app

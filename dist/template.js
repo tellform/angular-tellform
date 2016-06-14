@@ -1,4 +1,4 @@
-angular.module('TellForm.templates', []).run(['$templateCache', function($templateCache) {
+angular.module('angular-tellform.templates', []).run(['$templateCache', function($templateCache) {
   $templateCache.put("modules/forms/base/views/directiveViews/entryPage/startPage.html",
     "<div class=\"field row text-center\">\n" +
     "    <div class=\"col-xs-12 text-center\">\n" +
@@ -485,14 +485,14 @@ angular.module('TellForm.templates', []).run(['$templateCache', function($templa
     "                    <div class=\"col-md-4 col-md-offset-2 hidden-sm hidden-xs\" ng-if=\"!authentication.isAuthenticated()\">\n" +
     "                        <a href=\"/#!/forms\" class=\"btn\"\n" +
     "                            ng-style=\"{'background-color':myform.design.colors.buttonColor, 'color':myform.design.colors.buttonTextColor}\">\n" +
-    "                            Create a TellForm\n" +
+    "                            Create a angular-tellform\n" +
     "                        </a>\n" +
     "                    </div>\n" +
     "                    <div class=\"col-md-4 col-md-offset-2 hidden-sm hidden-xs\" ng-if=\"authentication.isAuthenticated()\">\n" +
     "                        <a href=\"/#!/forms/{{myform._id}}/admin/create\" \n" +
     "                            ng-style=\"{'background-color':myform.design.colors.buttonColor, 'color':myform.design.colors.buttonTextColor}\"\n" +
     "                            class=\"btn\">\n" +
-    "                            Edit this TellForm\n" +
+    "                            Edit this angular-tellform\n" +
     "                        </a>\n" +
     "                    </div>\n" +
     "                    <div class=\"col-md-4 col-sm-10 col-md-offset-0 col-sm-offset-2 col-xs-12\"> \n" +
