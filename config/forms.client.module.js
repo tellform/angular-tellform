@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('forms').factory('Auth', [
+angular.module('TellForm').factory('Auth', [
     function() {
         var service = {
             _currentUser: null,
@@ -24,22 +24,22 @@ angular.module('forms').factory('Auth', [
         return service;
     }
 ]);
-angular.module('forms').factory('$state', [function() {
+angular.module('TellForm').factory('$state', [function() {
     return {
         go: function() {}
     };
 }]);
-angular.module('forms').factory('myForm', ['Forms', function(Forms) {
+angular.module('TellForm').factory('myForm', ['Forms', function(Forms) {
     var form = window.form;
     form.visible_form_fields = _.filter(form.form_fields, function(field){
         return (field.deletePreserved === false);
     });
     return form;
 }]);
-angular.module('forms').constant('FORM_URL', '/form/:formId');
+angular.module('TellForm').constant('FORM_URL', '/form/:formId');
 
 // Configuring the Forms drop-down menus
-angular.module('forms').filter('formValidity',
+angular.module('TellForm').filter('formValidity',
     function(){
         return function(formObj){
             if(formObj && formObj.form_fields && formObj.visible_form_fields){
