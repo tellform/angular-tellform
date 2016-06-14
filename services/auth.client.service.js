@@ -1,4 +1,6 @@
-module.exports = function() {
+'use strict';
+
+angular.module('angular-tellform').factory('Auth', function() {
     var service = {
         _currentUser: null,
         get currentUser(){
@@ -19,4 +21,4 @@ module.exports = function() {
         }
     };
     return service;
-};
+});

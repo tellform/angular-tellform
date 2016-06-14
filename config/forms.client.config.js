@@ -1,7 +1,7 @@
 'use strict';
 
 // Configuring the Forms drop-down menus
-module.exports = function(){
+angular.module('angular-tellform').filter('formValidity', function(){
 	return function(formObj){
 		if(formObj && formObj.form_fields && formObj.visible_form_fields){
 
@@ -25,4 +25,8 @@ module.exports = function(){
 		}
 		return 0;
 	};
-};
+}).factory('$state', [function() {
+	return {
+		go: function() {}
+	};
+}]).constant('FORM_URL', '/form/:formId');

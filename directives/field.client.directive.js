@@ -8,7 +8,9 @@ var __indexOf = [].indexOf || function(item) {
     return -1;
 };
 
-module.exports = function($http, $compile, $rootScope, $templateCache) {
+angular.module('angular-tellform').directive('fieldDirective',
+    ['$http', '$compile', '$rootScope', '$templateCache',
+        function($http, $compile, $rootScope, $templateCache) {
 
     var getTemplateUrl = function(fieldType) {
         var type = fieldType;
@@ -84,4 +86,4 @@ module.exports = function($http, $compile, $rootScope, $templateCache) {
             $compile(element.contents())(scope);
         }
     };
-};
+}]);

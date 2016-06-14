@@ -1,6 +1,7 @@
 'use strict';
 
-module.exports = function ($http, TimeCounter, $filter, $rootScope, Auth) {
+angular.module('angular-tellform').directive('submitFormDirective', ['$http', 'TimeCounter', '$filter', '$rootScope', 'Auth',
+    function ($http, TimeCounter, $filter, $rootScope, Auth) {
     return {
         templateUrl: 'modules/forms/base/views/directiveViews/form/submit-form.client.view.html',
         restrict: 'E',
@@ -170,4 +171,4 @@ module.exports = function ($http, TimeCounter, $filter, $rootScope, Auth) {
 
         }
     };
-};
+}]);

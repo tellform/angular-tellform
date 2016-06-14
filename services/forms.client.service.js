@@ -1,7 +1,7 @@
 'use strict';
 
 //Forms service used for communicating with the forms REST endpoints
-module.exports = function($resource, FORM_URL) {
+angular.module('angular-tellform').factory('Forms', function($resource, FORM_URL) {
 	return $resource(FORM_URL, {
 		formId: '@_id'
 	}, {
@@ -38,4 +38,4 @@ module.exports = function($resource, FORM_URL) {
 			method: 'POST'
 		}
 	});
-};
+});

@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 		ngAnnotate: {
 			production: {
 				files: {
-					'demo/dist/form.js': [
+					'dist/form.js': [
 						'config/**/*.js', 'controllers/**/*.js',
 						'directives/**/*.js', 'services/**/*.js',
 						'dist/template.js'
@@ -36,12 +36,19 @@ module.exports = function(grunt) {
 				  'demo/dist/form.css': 'css/**/*.css'
 			  }
 		  }
-	    }
+	    },
+		browserify: {
+			dist: {
+				src: 'index.js',
+				dest: 'dist/bundle.js',
+				require: 'node_modules/**.js'
+			}
+		}
 	});
 
 	// Making grunt default to force in order not to break the project.
 	grunt.option('force', true);
 
 	// Default task(s).
-	grunt.registerTask('build', ['html2js:form', 'ngAnnotate', 'cssmin']);
+	grunt.registerTask('build', ['html2js:form', 'ngAnnotate', 'cssmin', 'browserify:dist']);
 };

@@ -1,6 +1,7 @@
 'use strict';
 
-module.exports = function() {
+angular.module('angular-tellform').directive('fieldIconDirective',
+	function() {
     
     return {
         template: '<i class="{{typeIcon}}"></i>',
@@ -30,4 +31,4 @@ module.exports = function() {
 			$scope.typeIcon = iconTypeMap[$scope.typeName];
         }
     };
-};
+});

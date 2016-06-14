@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(){
+angular.module('angular-tellform').service('TimeCounter', function(){
 	var _startTime, _endTime, that=this;
 
 	this.timeSpent = 0;
@@ -26,4 +26,4 @@ module.exports = function(){
 		return !!this._startTime;
 	};
 
-};
+});

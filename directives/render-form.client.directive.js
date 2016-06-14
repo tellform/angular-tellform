@@ -1,6 +1,7 @@
 'use strict';
 
-module.exports = function ($rootScope, $state, myForm, Auth) {
+angular.module('angular-tellform').directive('angularTellform',
+    ['$rootScope', '$state', 'myForm', 'Auth', function ($rootScope, $state, myForm, Auth) {
     return {
         templateUrl: 'modules/forms/base/views/submit-form.client.view.html',
         restrict: 'E',
@@ -27,4 +28,4 @@ module.exports = function ($rootScope, $state, myForm, Auth) {
 
         }
     };
-};
+}]);

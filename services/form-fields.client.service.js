@@ -1,7 +1,7 @@
 'use strict';
 
 //TODO: DAVID: URGENT: Make this a $resource that fetches valid field types from server
-module.exports = function() {
+angular.module('angular-tellform').service('FormFields', function() {
 	this.types = [
 		{
 			name : 'textfield',
@@ -68,4 +68,4 @@ module.exports = function() {
 			value : 'Statement'
 		}
 	];
-};
+});

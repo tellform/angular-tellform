@@ -1,7 +1,7 @@
 'use strict';
 
 //Forms service used for communicating with the forms REST endpoints
-module.exports = function() {
+angular.module('angular-tellform').factory('Current-Form', function() {
 
 	//Private variables
 	var _form = {};
@@ -13,4 +13,4 @@ module.exports = function() {
 	this.setForm = function (form) {
 		_form = form;
 	};
-};
+});

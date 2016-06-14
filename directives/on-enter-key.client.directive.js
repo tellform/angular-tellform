@@ -1,6 +1,7 @@
 'use strict';
 
-module.exports = function($rootScope){
+angular.module('angular-tellform').directive('onEnterKey', ['$rootScope',
+	function($rootScope){
 	return {
 		restrict: 'A', 
 		link: function($scope, $element, $attrs) {
@@ -17,4 +18,4 @@ module.exports = function($rootScope){
 			});
 		}
 	};	
-};
+}]);
