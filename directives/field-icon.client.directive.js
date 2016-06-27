@@ -1,9 +1,7 @@
 'use strict';
 
-angular.module('angular-tellform').directive('fieldIconDirective',
-	function() {
-    
-    return {
+angular.module('angular-tellform').directive('fieldIconDirective', function() {
+	return {
         template: '<i class="{{typeIcon}}"></i>',
         restrict: 'E',
         scope: {

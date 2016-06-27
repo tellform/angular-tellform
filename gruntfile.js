@@ -27,27 +27,21 @@ module.exports = function(grunt) {
 		  },
 		  form: {
 			src: ['views/**/*.html'],
-		    dest: 'demo/dist/template.js'
+		    dest: 'dist/template.js'
 		  }
 	    },
 	    cssmin: {
 		  combine: {
 			  files: {
-				  'demo/dist/form.css': 'css/**/*.css'
+				  'dist/form.css': 'css/**/*.css'
 			  }
 		  }
-	    },
-		browserify: {
-			dist: {
-				src: 'index.js',
-				dest: 'dist/bundle.js'
-			}
-		}
+	    }
 	});
 
 	// Making grunt default to force in order not to break the project.
 	grunt.option('force', true);
 
 	// Default task(s).
-	grunt.registerTask('build', ['html2js:form', 'ngAnnotate', 'cssmin', 'browserify:dist']);
+	grunt.registerTask('default', ['html2js:form', 'ngAnnotate', 'cssmin', 'browserify:dist']);
 };

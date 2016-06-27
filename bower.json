@@ -1,6 +1,7 @@
 {
   "name": "angular-tellform",
   "description": "Frontend UI for Tellform",
+  "version": "1.0.0",
   "main": [
     "dist/bundle.js",
     "dist/form.css"
@@ -10,6 +11,7 @@
     "Samuel Laulhau <sam@lalop.co> (https://samuellaulhau.fr)"
   ],
   "license": "MIT",
+<<<<<<< HEAD
   "keywords": [
     "forms",
     "tellform",
@@ -66,4 +68,3 @@
   },
   "private": false
 }
-

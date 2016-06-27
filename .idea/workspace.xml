@@ -2,8 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9164c9bf-fc30-4074-b1ae-ad096b6b1e09" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower.json" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/i18n/english.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/i18n/french.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/i18n/german.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/i18n/italian.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/i18n/spanish.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/submit-form.client.controller.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/boot.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/dist/form.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/dist/template.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/services/myform.client.service.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/forms.client.config.js" afterPath="$PROJECT_DIR$/config/forms.client.config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/form.css" afterPath="$PROJECT_DIR$/css/form.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/index.html" afterPath="$PROJECT_DIR$/demo/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/directives/field-icon.client.directive.js" afterPath="$PROJECT_DIR$/directives/field-icon.client.directive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/directives/field.client.directive.js" afterPath="$PROJECT_DIR$/directives/field.client.directive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/directives/on-enter-key.client.directive.js" afterPath="$PROJECT_DIR$/directives/on-enter-key.client.directive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/directives/on-finish-render.client.directive.js" afterPath="$PROJECT_DIR$/directives/on-finish-render.client.directive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/directives/submit-form.client.directive.js" afterPath="$PROJECT_DIR$/directives/submit-form.client.directive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gruntfile.js" afterPath="$PROJECT_DIR$/gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/current-form.client.service.js" afterPath="$PROJECT_DIR$/services/current-form.client.service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/forms.client.service.js" afterPath="$PROJECT_DIR$/services/forms.client.service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/time-counter.client.service.js" afterPath="$PROJECT_DIR$/services/time-counter.client.service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/directiveViews/entryPage/startPage.html" afterPath="$PROJECT_DIR$/views/directiveViews/entryPage/startPage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/directiveViews/field/date.html" afterPath="$PROJECT_DIR$/views/directiveViews/field/date.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/directiveViews/field/dropdown.html" afterPath="$PROJECT_DIR$/views/directiveViews/field/dropdown.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/directiveViews/field/file.html" afterPath="$PROJECT_DIR$/views/directiveViews/field/file.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/directiveViews/field/legal.html" afterPath="$PROJECT_DIR$/views/directiveViews/field/legal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/directiveViews/field/radio.html" afterPath="$PROJECT_DIR$/views/directiveViews/field/radio.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/directiveViews/field/rating.html" afterPath="$PROJECT_DIR$/views/directiveViews/field/rating.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/directiveViews/field/statement.html" afterPath="$PROJECT_DIR$/views/directiveViews/field/statement.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/directiveViews/field/textarea.html" afterPath="$PROJECT_DIR$/views/directiveViews/field/textarea.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/directiveViews/field/textfield.html" afterPath="$PROJECT_DIR$/views/directiveViews/field/textfield.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/directiveViews/field/yes_no.html" afterPath="$PROJECT_DIR$/views/directiveViews/field/yes_no.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/directiveViews/form/submit-form.client.view.html" afterPath="$PROJECT_DIR$/views/directiveViews/form/submit-form.client.view.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/submit-form.client.view.html" afterPath="$PROJECT_DIR$/views/submit-form.client.view.html" />
     </list>
     <ignored path="angular-tellform.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,80 +63,103 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo/app.js">
+      <file leaf-file-name="legal.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/directiveViews/field/legal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+            <state relative-caret-position="765">
+              <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="field.client.directive.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/directives/field.client.directive.js">
+      <file leaf-file-name="auth.client.service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/services/auth.client.service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="template.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo/dist/template.js">
+      <file leaf-file-name="current-form.client.service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/services/current-form.client.service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+            <state relative-caret-position="255">
+              <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form-fields.client.service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/services/form-fields.client.service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="70" column="2" selection-start-line="70" selection-start-column="2" selection-end-line="70" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.client.service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/services/forms.client.service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2">
+              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="time-counter.client.service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/services/time-counter.client.service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="37" column="3" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="submit-form.client.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/submit-form.client.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/form.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2996">
+              <caret line="338" column="0" selection-start-line="338" selection-start-column="0" selection-end-line="338" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="submit-form.client.view.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/directiveViews/form/submit-form.client.view.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="229">
+              <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
               <folding>
-                <marker date="1467058636000" expanded="true" signature="450:461" placeholder="..." />
-                <marker date="1467058636000" expanded="true" signature="585:643" placeholder="..." />
-                <marker date="1467058636000" expanded="true" signature="735:750" placeholder="..." />
-                <marker date="1467058636000" expanded="true" signature="948:1004" placeholder="..." />
-                <marker date="1467058636000" expanded="true" signature="1378:1431" placeholder="..." />
-                <marker date="1467058636000" expanded="true" signature="7272:7283" placeholder="..." />
-                <marker date="1467058636000" expanded="true" signature="11868:11900" placeholder="..." />
-                <marker date="1467058636000" expanded="true" signature="16236:16299" placeholder="..." />
-                <marker date="1467058636000" expanded="true" signature="16755:16771" placeholder="..." />
-                <marker date="1467058636000" expanded="true" signature="16809:16834" placeholder="..." />
-                <marker date="1467058636000" expanded="true" signature="19060:19123" placeholder="..." />
-                <marker date="1467058636000" expanded="true" signature="19595:19611" placeholder="..." />
-                <marker date="1467058636000" expanded="true" signature="19644:19669" placeholder="..." />
-                <marker date="1467058636000" expanded="true" signature="20712:20757" placeholder="..." />
-                <marker date="1467058636000" expanded="true" signature="20896:20925" placeholder="..." />
-                <marker date="1467058636000" expanded="true" signature="21580:21597" placeholder="..." />
-                <marker date="1467058636000" expanded="true" signature="21712:21757" placeholder="..." />
-                <marker date="1467058636000" expanded="true" signature="21867:21894" placeholder="..." />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gruntfile.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gruntfile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="publish.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/publish.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".bowerrc" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.bowerrc">
+      <file leaf-file-name="natural.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/directiveViews/field/natural.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -118,35 +180,52 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/directives/on-finish-render.client.directive.js" />
         <option value="$PROJECT_DIR$/dist/form.js" />
         <option value="$PROJECT_DIR$/controllers/submit-form.client.controller.js" />
         <option value="$PROJECT_DIR$/demo/dist/form.js" />
         <option value="$PROJECT_DIR$/config/forms.client.module.js" />
-        <option value="$PROJECT_DIR$/directives/field-icon.client.directive.js" />
-        <option value="$PROJECT_DIR$/directives/on-enter-key.client.directive.js" />
         <option value="$PROJECT_DIR$/services/auth.client.service.js" />
-        <option value="$PROJECT_DIR$/services/current-form.client.service.js" />
         <option value="$PROJECT_DIR$/services/form-fields.client.service.js" />
-        <option value="$PROJECT_DIR$/services/forms.client.service.js" />
-        <option value="$PROJECT_DIR$/services/time-counter.client.service.js" />
         <option value="$PROJECT_DIR$/demo/boot.js" />
-        <option value="$PROJECT_DIR$/config/forms.client.config.js" />
         <option value="$PROJECT_DIR$/demo/package.json" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/demo/dist/bundle.js" />
-        <option value="$PROJECT_DIR$/gruntfile.js" />
         <option value="$PROJECT_DIR$/dist/bundle.js" />
-        <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/demo/index.html" />
         <option value="$PROJECT_DIR$/services/myform.client.service.js" />
-        <option value="$PROJECT_DIR$/directives/submit-form.client.directive.js" />
         <option value="$PROJECT_DIR$/directives/render-form.client.directive.js" />
         <option value="$PROJECT_DIR$/demo/app.js" />
-        <option value="$PROJECT_DIR$/directives/field.client.directive.js" />
         <option value="$PROJECT_DIR$/publish.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/config/forms.client.config.js" />
+        <option value="$PROJECT_DIR$/config/i18n/english.js" />
+        <option value="$PROJECT_DIR$/config/i18n/french.js" />
+        <option value="$PROJECT_DIR$/directives/field.client.directive.js" />
+        <option value="$PROJECT_DIR$/directives/field-icon.client.directive.js" />
+        <option value="$PROJECT_DIR$/directives/on-enter-key.client.directive.js" />
+        <option value="$PROJECT_DIR$/directives/on-finish-render.client.directive.js" />
+        <option value="$PROJECT_DIR$/directives/submit-form.client.directive.js" />
+        <option value="$PROJECT_DIR$/services/current-form.client.service.js" />
+        <option value="$PROJECT_DIR$/views/submit-form.client.view.html" />
+        <option value="$PROJECT_DIR$/services/time-counter.client.service.js" />
+        <option value="$PROJECT_DIR$/services/forms.client.service.js" />
+        <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/demo/index.html" />
         <option value="$PROJECT_DIR$/bower.json" />
+        <option value="$PROJECT_DIR$/gruntfile.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/views/directiveViews/entryPage/startPage.html" />
+        <option value="$PROJECT_DIR$/views/directiveViews/field/date.html" />
+        <option value="$PROJECT_DIR$/views/directiveViews/field/dropdown.html" />
+        <option value="$PROJECT_DIR$/views/directiveViews/field/file.html" />
+        <option value="$PROJECT_DIR$/views/directiveViews/field/legal.html" />
+        <option value="$PROJECT_DIR$/views/directiveViews/field/radio.html" />
+        <option value="$PROJECT_DIR$/views/directiveViews/field/rating.html" />
+        <option value="$PROJECT_DIR$/views/directiveViews/field/statement.html" />
+        <option value="$PROJECT_DIR$/views/directiveViews/field/textarea.html" />
+        <option value="$PROJECT_DIR$/views/directiveViews/field/textfield.html" />
+        <option value="$PROJECT_DIR$/views/directiveViews/field/yes_no.html" />
+        <option value="$PROJECT_DIR$/views/directiveViews/form/submit-form.client.view.html" />
+        <option value="$PROJECT_DIR$/css/form.css" />
       </list>
     </option>
   </component>
@@ -201,6 +280,90 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="angular-tellform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular-tellform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular-tellform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular-tellform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular-tellform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular-tellform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular-tellform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular-tellform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular-tellform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular-tellform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular-tellform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular-tellform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular-tellform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -285,21 +448,21 @@
       <updated>1461871286272</updated>
       <workItem from="1461871287592" duration="9185000" />
       <workItem from="1465868832445" duration="2597000" />
-      <workItem from="1467054365239" duration="5159000" />
+      <workItem from="1467054365239" duration="6363000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16941000" />
+    <option name="totallyTimeSpent" value="18145000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="5" y="349" width="1435" height="500" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23902439" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3715847" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3712297" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -342,268 +505,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/boot.js" />
-    <entry file="file://$PROJECT_DIR$/directives/on-finish-render.client.directive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/submit-form.client.controller.js" />
-    <entry file="file://$PROJECT_DIR$/demo/lib/v-button/src/vButton/vButton.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/lib/v-button/src/vButton/directives/v-busy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/directives/field-icon.client.directive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/directives/on-enter-key.client.directive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/forms.client.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="2" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundle.js" />
-    <entry file="file://$PROJECT_DIR$/demo/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="58" column="3" selection-start-line="58" selection-start-column="3" selection-end-line="134" selection-end-column="3" />
-          <folding>
-            <element signature="n#!!block;n#browserify-shim#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="133" column="3" selection-start-line="133" selection-start-column="3" selection-end-line="133" selection-end-column="3" />
-          <folding>
-            <element signature="n#!!block;n#browserify-shim#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/forms.client.module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/forms.client.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="3" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/time-counter.client.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="3" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/auth.client.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/lib/angular-strap/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/lib/jquery/.bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/lib/jquery/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/lib/components-font-awesome/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/lib/lodash/.bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/lib/lodash/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/lib/v-button/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-          <folding>
-            <marker date="1467058636000" expanded="true" signature="21582:21593" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="21717:21775" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="21867:21882" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="22080:22136" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="22510:22563" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="28404:28415" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="33000:33032" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="37368:37431" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="37887:37903" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="37941:37966" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="40192:40255" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="40727:40743" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="40776:40801" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="41844:41889" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="42028:42057" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="42712:42729" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="42844:42889" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="42999:43026" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/boot.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/bundle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/template.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8025">
-          <caret line="535" column="58" selection-start-line="535" selection-start-column="47" selection-end-line="535" selection-end-column="58" />
-          <folding>
-            <marker date="1467058552000" expanded="true" signature="450:461" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="585:643" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="735:750" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="948:1004" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="1378:1431" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="7272:7283" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="11868:11900" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="16236:16299" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="16755:16771" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="16809:16834" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="19060:19123" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="19595:19611" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="19644:19669" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="20712:20757" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="20896:20925" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="21580:21597" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="21712:21757" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="21867:21894" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/bundle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="1240" column="23" selection-start-line="1240" selection-start-column="13" selection-end-line="1240" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/lib/angular-ui-utils/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/lib/angular-scroll/angular-scroll.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/lib/angular-scroll/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/lib/angular-busy/angular-busy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo/lib/v-button/dist/v-button.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -629,14 +530,6 @@
           <folding>
             <element signature="n#!!doc" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -667,77 +560,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo/dist/form.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
           <caret line="1111" column="30" selection-start-line="1111" selection-start-column="24" selection-end-line="1111" selection-end-column="30" />
-          <folding>
-            <marker date="1467058552000" expanded="true" signature="21382:21393" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="21517:21575" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="21667:21682" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="21880:21936" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="22310:22363" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="28204:28215" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="32800:32832" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="37168:37231" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="37687:37703" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="37741:37766" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="39992:40055" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="40527:40543" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="40576:40601" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="41644:41689" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="41828:41857" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="42512:42529" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="42644:42689" placeholder="..." />
-            <marker date="1467058552000" expanded="true" signature="42799:42826" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/myform.client.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/form-fields.client.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="70" column="2" selection-start-line="70" selection-start-column="2" selection-end-line="70" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/directives/submit-form.client.directive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/directives/render-form.client.directive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/current-form.client.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -750,53 +576,146 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/i18n/german.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/i18n/french.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/i18n/english.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.bowerrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/directives/field.client.directive.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+        <state relative-caret-position="-270">
+          <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/directives/field-icon.client.directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/directives/on-enter-key.client.directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/directives/on-finish-render.client.directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-77">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/directives/render-form.client.directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/directives/submit-form.client.directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/myform.client.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/forms.client.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/boot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/forms.client.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/dist/template.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
+        <state relative-caret-position="1020">
           <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
-          <folding>
-            <marker date="1467058636000" expanded="true" signature="450:461" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="585:643" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="735:750" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="948:1004" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="1378:1431" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="7272:7283" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="11868:11900" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="16236:16299" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="16755:16771" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="16809:16834" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="19060:19123" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="19595:19611" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="19644:19669" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="20712:20757" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="20896:20925" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="21580:21597" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="21712:21757" placeholder="..." />
-            <marker date="1467058636000" expanded="true" signature="21867:21894" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/publish.js">
+    <entry file="file://$PROJECT_DIR$/bower.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+        <state relative-caret-position="262">
+          <caret line="69" column="1" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -809,18 +728,214 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bower.json">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+        <state relative-caret-position="105">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.bowerrc">
+    <entry file="file://$PROJECT_DIR$/publish.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1395">
+          <caret line="116" column="5" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+          <folding>
+            <marker date="1467060574000" expanded="true" signature="48:958" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/submit-form.client.view.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/directiveViews/entryPage/startPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/directiveViews/field/date.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/directiveViews/field/dropdown.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/directiveViews/field/file.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/directiveViews/field/hidden.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/directiveViews/field/radio.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/directiveViews/field/rating.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/directiveViews/field/statement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/directiveViews/field/textarea.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/directiveViews/field/textfield.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/directiveViews/field/yes_no.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/directiveViews/form/submit-form.client.view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/directiveViews/field/natural.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/directiveViews/field/legal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/auth.client.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/current-form.client.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/form-fields.client.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="70" column="2" selection-start-line="70" selection-start-column="2" selection-end-line="70" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/forms.client.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/time-counter.client.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="3" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/submit-form.client.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/form.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2996">
+          <caret line="338" column="0" selection-start-line="338" selection-start-column="0" selection-end-line="338" selection-end-column="0" />
           <folding />
         </state>
       </provider>

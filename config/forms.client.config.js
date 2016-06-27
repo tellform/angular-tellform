@@ -1,7 +1,8 @@
 'use strict';
 
 // Configuring the Forms drop-down menus
-angular.module('angular-tellform').filter('formValidity', function(){
+angular.module('angular-tellform')
+.filter('formValidity', function(){
 	return function(formObj){
 		if(formObj && formObj.form_fields && formObj.visible_form_fields){
 
@@ -29,4 +30,19 @@ angular.module('angular-tellform').filter('formValidity', function(){
 	return {
 		go: function() {}
 	};
-}]).constant('FORM_URL', '/form/:formId');
+}]).constant('FORM_URL', '/form/:formId')
+.value('supportedFields', [
+	'textfield',
+	'textarea',
+	'date',
+	'dropdown',
+	'hidden',
+	'password',
+	'radio',
+	'legal',
+	'statement',
+	'rating',
+	'yes_no',
+	'number',
+	'natural'
+]);

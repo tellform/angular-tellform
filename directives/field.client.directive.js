@@ -8,32 +8,17 @@ var __indexOf = [].indexOf || function(item) {
     return -1;
 };
 
-angular.module('angular-tellform').directive('fieldDirective',
-    ['$http', '$compile', '$rootScope', '$templateCache',
-        function($http, $compile, $rootScope, $templateCache) {
+angular.module('angular-tellform').directive('fieldDirective', ['$http', '$compile', '$rootScope', '$templateCache', 'supportedFields',
+    function($http, $compile, $rootScope, $templateCache, supportedFields) {
 
     var getTemplateUrl = function(fieldType) {
         var type = fieldType;
+
         var templateUrl = 'modules/forms/base/views/directiveViews/field/';
-        var supported_fields = [
-            'textfield',
-            'textarea',
-            'date',
-            'dropdown',
-            'hidden',
-            'password',
-            'radio',
-            'legal',
-            'statement',
-            'rating',
-            'yes_no',
-            'number',
-            'natural'
-        ];
-	    if (__indexOf.call(supported_fields, type) >= 0) {
+
+		if (__indexOf.call(supportedFields, type) >= 0) {
             templateUrl = templateUrl+type+'.html';
         }
-
    		return $templateCache.get(templateUrl);
     };
 
@@ -44,9 +29,25 @@ angular.module('angular-tellform').directive('fieldDirective',
             field: '=',
             required: '&',
             design: '=',
-            index: '=',
+            index: '='
         },
         link: function(scope, element) {
+
+			$rootScope.chooseDefaultOption = scope.chooseDefaultOption = function(type) {
+				if(type === 'yes_no'){
+					scope.field.fieldValue = 'true';
+				}else if(type === 'rating'){
+					scope.field.fieldValue = 0;
+				}else if(scope.field.fieldType === 'radio'){
+					console.log(scope.field);
+					scope.field.fieldValue = scope.field.fieldOptions[0].option_value;
+					console.log(scope.field.fieldValue);
+				}else if(type === 'legal'){
+					scope.field.fieldValue = 'true';
+					$rootScope.nextField();
+				}
+			};
+            
             scope.setActiveField = $rootScope.setActiveField;
 
             //Set format only if field is a date
@@ -72,7 +73,8 @@ angular.module('angular-tellform').directive('fieldDirective',
 						scope.field.placeholder = 'joesmith@example.com';
 						break;
 					case 'number':
-                        scope.field.input_type = 'number';
+                        scope.field.input_type = 'text';
+						scope.field.validateRegex = /^-?\d+$/;
                         break;
                     default:
 						scope.field.input_type = 'url';

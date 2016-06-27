@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function ($rootScope, $timeout) {
+angular.module('angular-tellform').directive('onFinishRender', function ($rootScope, $timeout) {
     return {
         restrict: 'A',
         link: function (scope, element, attrs) {
@@ -24,4 +24,4 @@ module.exports = function ($rootScope, $timeout) {
             }
         }
     };
-};
+});
