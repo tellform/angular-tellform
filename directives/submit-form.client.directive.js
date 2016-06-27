@@ -6,7 +6,8 @@ angular.module('angular-tellform').directive('submitFormDirective', ['$http', 'T
             templateUrl: 'modules/forms/base/views/directiveViews/form/submit-form.client.view.html',
 			restrict: 'E',
             scope: {
-                myform:'='
+                myform:'=',
+				formEndPoint: '='
             },
             controller: function($document, $window, $scope){
                 $scope.authentication = $rootScope.authentication;
@@ -216,7 +217,7 @@ angular.module('angular-tellform').directive('submitFormDirective', ['$http', 'T
 					}
 
 					setTimeout(function () {
-						$scope.submitPromise = $http.post('/forms/' + $scope.myform._id, form)
+						$scope.submitPromise = $http.post($scope.formEndPoint, form)
 							.success(function (data, status, headers) {
 								console.log($scope.myform.form_fields[0]);
 								$scope.myform.submitted = true;

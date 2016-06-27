@@ -3,8 +3,9 @@
 angular.module('myModule', ['angular-tellform']);
 angular.module('myModule').controller('MyFormCtrl', function MyFormCtrl($scope) {
     
-    $scope.myform = {
+    $scope.form = {
         "title": "Job Application Example",
+        "_id": "57193ffa2aa1f3ff5e205b5c",
         "design": {
             "colors": {
                 "buttonTextColor": "#5C780A",
@@ -335,5 +336,7 @@ angular.module('myModule').controller('MyFormCtrl', function MyFormCtrl($scope) 
         }],
         "language": "english"
     };
+
+    $scope.endPoint = "https://admin.tellform.com/forms/"+$scope.form._id;
 
 });

@@ -4,7 +4,7 @@ This module gives you the standalone front-end of tellform. It handles form rend
 
 ```
 <section class="content" ng-controller="MyFormCtrl">
-	<angular-tellform myform="form"></angular-tellform>
+	<angular-tellform myform="form" endPoint="https://myurl.com/endpoint"></angular-tellform>
 </section>
 ```
 
@@ -89,6 +89,8 @@ angular.module('myModule').controller('MyFormCtrl', function MyFormCtrl($scope) 
         "language": "english"
     };
 
+    $scope.endPoint="https://myurl.com/endpoint";
+
 });
 ```
 
@@ -100,7 +102,7 @@ Then add the angular-tellform directive to your controller's html view
 ...
 <body ng-app="myModule">
 	<section class="content" ng-controller="MyFormCtrl">
-		<angular-tellform myform="form"></angular-tellform>
+		<angular-tellform myform="form" endPoint="endPoint"></angular-tellform>
 	</section>
 </body>
 ...
