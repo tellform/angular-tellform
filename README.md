@@ -2,6 +2,12 @@
 
 This module gives you the standalone front-end of tellform. It handles form rendering and form ui. For you to use this module you must have an API endpoint, such as [FormKeep](https://formkeep.com) or [Formlets](https://formlets.org). 
 
+```
+<section class="content" ng-controller="MyFormCtrl">
+	<angular-tellform myform="form"></angular-tellform>
+</section>
+```
+
 ## Installation
 
 via bower
