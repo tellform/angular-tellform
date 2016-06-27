@@ -180,51 +180,51 @@ The title of the form
 
 ### design
 
-	**Required**
+**Required**
 
-	Type: `Object`
+Type: `Object`
+
+The object containing the CSS styles and colors for the form
+
+####design.colors.buttonTextColor
+
+	**Required**
 	
-	The object containing the CSS styles and colors for the form
+	Type: `String`
 	
-	####colors.buttonTextColor
+	The hex color of the button text
 	
-		**Required**
-		
-		Type: `String`
-		
-		The hex color of the button text
-		
-	####colors.buttonColor
+####design.colors.buttonColor
+
+	**Required**
 	
-		**Required**
-		
-		Type: `String`
-		
-		The hex color of the button background
-		
-	####colors.anwserColor
+	Type: `String`
 	
-		**Required**
-		
-		Type: `String`
-		
-		The hex color of the answer (input field) text.
+	The hex color of the button background
 	
-	####colors.questionColor
+####colors.anwserColor
+
+	**Required**
 	
-		**Required**
-		
-		Type: `String`
-		
-		The hex color of the question text.
+	Type: `String`
 	
-	####colors.backgroundColor
+	The hex color of the answer (input field) text.
+
+####design.colors.questionColor
+
+	**Required**
 	
-		**Required**
-		
-		Type: `String`
-		
-		The hex color of the form background.
+	Type: `String`
+	
+	The hex color of the question text.
+
+####design.colors.backgroundColor
+
+	**Required**
+	
+	Type: `String`
+	
+	The hex color of the form background.
 
 ### hideFooter
 *Recommended*
