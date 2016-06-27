@@ -1,5 +1,5 @@
 'use strict';
-
+/*
 angular.module('angular-tellform').factory('myForm', function(Forms) {
     var form = window.form;
     form.visible_form_fields = _.filter(form.form_fields, function(field){
@@ -7,3 +7,4 @@ angular.module('angular-tellform').factory('myForm', function(Forms) {
     });
     return form;
 });
+*/

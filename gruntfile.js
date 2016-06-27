@@ -40,8 +40,7 @@ module.exports = function(grunt) {
 		browserify: {
 			dist: {
 				src: 'index.js',
-				dest: 'dist/bundle.js',
-				require: 'node_modules/**.js'
+				dest: 'dist/bundle.js'
 			}
 		}
 	});

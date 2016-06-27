@@ -22,6 +22,8 @@ angular.module('angular-tellform').directive('submitFormDirective', ['$http', 'T
             $scope.reloadForm = function(){
                 //Reset Form
                 $scope.myform.submitted = false;
+                
+                
                 $scope.myform.form_fields = _.chain($scope.myform.visible_form_fields).map(function(field){
                         field.fieldValue = '';
                         return field;

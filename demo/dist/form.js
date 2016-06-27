@@ -1,4 +1,3 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
 // Configuring the Forms drop-down menus
@@ -165,7 +164,7 @@ angular.module('angular-tellform').directive('fieldDirective',
             'number',
             'natural'
         ];
-	    if (__indexOf.call(supported_fields, type) >= 0) {
+	if (__indexOf.call(supported_fields, type) >= 0) {
             templateUrl = templateUrl+type+'.html';
         }
 
@@ -191,7 +190,7 @@ angular.module('angular-tellform').directive('fieldDirective',
                     changeMonth: true,
                     altFormat: 'mm/dd/yyyy',
                     yearRange: '1900:-0',
-                    defaultDate: 0
+                    defaultDate: 0,
                 };
             }
 
@@ -217,7 +216,7 @@ angular.module('angular-tellform').directive('fieldDirective',
 				fieldType = 'textfield';
 			}
             var template = getTemplateUrl(fieldType);
-           	element.html(template);
+           	element.html(template).show();
             $compile(element.contents())(scope);
         }
     };
@@ -276,7 +275,7 @@ module.exports = function ($rootScope, $timeout) {
 'use strict';
 
 angular.module('angular-tellform').directive('angularTellform',
-    ['$rootScope', '$state', 'Auth', function ($rootScope, $state, Auth) {
+    ['$rootScope', '$state', 'myForm', 'Auth', function ($rootScope, $state, myForm, Auth) {
     return {
         templateUrl: 'modules/forms/base/views/submit-form.client.view.html',
         restrict: 'E',
@@ -284,11 +283,8 @@ angular.module('angular-tellform').directive('angularTellform',
             myform:'='
         },
         controller: ["$document", "$window", "$scope", function($document, $window, $scope){
-            console.log('angular-tellform directive');
             $scope.authentication = Auth;
-            $scope.myform.visible_form_fields = _.filter($scope.myform.form_fields, function(field){
-                return (field.deletePreserved === false);
-            });
+            $scope.myform = myForm;
 
             if(!$scope.myform.isLive){
                 // Show navbar if form is not public AND user IS loggedin
@@ -332,8 +328,6 @@ angular.module('angular-tellform').directive('submitFormDirective', ['$http', 'T
             $scope.reloadForm = function(){
                 //Reset Form
                 $scope.myform.submitted = false;
-                
-                
                 $scope.myform.form_fields = _.chain($scope.myform.visible_form_fields).map(function(field){
                         field.fieldValue = '';
                         return field;
@@ -640,15 +634,14 @@ angular.module('angular-tellform').factory('Forms', ["$resource", "FORM_URL", fu
 }]);
 
 'use strict';
-/*
-angular.module('angular-tellform').factory('myForm', function(Forms) {
+
+angular.module('angular-tellform').factory('myForm', ["Forms", function(Forms) {
     var form = window.form;
     form.visible_form_fields = _.filter(form.form_fields, function(field){
         return (field.deletePreserved === false);
     });
     return form;
-});
-*/
+}]);
 'use strict';
 
 angular.module('angular-tellform').service('TimeCounter', function(){
@@ -1220,180 +1213,3 @@ angular.module('angular-tellform.templates', []).run(['$templateCache', function
     "\n" +
     "");
 }]);
-
-},{}],2:[function(require,module,exports){
-'use strict';
-/*
-global.jQuery = require('jquery');
-global.angular = require('angular');
-require('jquery-ui');
-require('angular-animate');
-require('bootstrap');
-require('angular-ui-date');
-require('angular-strap');
-require('lodash');
-require('ng-file-upload');
-*/
-
-angular.module('angular-tellform', [
-    'ui.utils',
-    'duScroll',
-    'ui.select',
-    'cgBusy',
-    'ngSanitize',
-    'vButton',
-    'ngResource',
-    'ui.router',
-    'ui.bootstrap'
-]).constant('version', require('./package.json').version);
-
-//FIXME: App breaks when I remove this line and put modules in above statement
-angular.module('angular-tellform', ['ngResource', 'angular-tellform.templates']);
-
-require('./dist/form.js');
-/*
-angular.element(document).ready(function() {
-    //Then init the app
-    angular.bootstrap(document, ['angular-tellform']);
-});
-*/
-
-
-},{"./dist/form.js":1,"./package.json":3}],3:[function(require,module,exports){
-module.exports={
-  "name": "angular-tellform",
-  "description": "Frontend UI for Tellform",
-  "version": "1.0.0",
-  "homepage": "https://github.com/tellform/angular-tellform",
-  "authors": [
-    "David Baldwynn <polydaic@gmail.com> (http://baldwynn.me)",
-    "Samuel Laulhau <sam@lalop.co> (https://samuellaulhau.fr)"
-  ],
-  "private": true,
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tellform/angular-tellform.git"
-  },
-  "engines": {
-    "node": "~5.0.0",
-    "npm": "~2.11.2"
-  },
-  "scripts": {
-    "start": "node node_modules/.bin/http-server ./demo/",
-    "postinstall": "node node_modules/.bin/grunt build"
-  },
-  "dependencies": {
-    "angular": "~1.4.7",
-    "angular-animate": "^1.5.5",
-    "angular-bootstrap": "~0.12.2",
-    "angular-busy": "^4.1.3",
-    "angular-input-stars": "~1.5.5",
-    "angular-resource": "~1.4.7",
-    "angular-sanitize": "^1.5.3",
-    "angular-scroll": "^1.0.0",
-    "angular-strap": "~2.3.8",
-    "angular-ui-date": "~0.0.8",
-    "angular-ui-router": "^0.2.18",
-    "angular-ui-utils": "^0.1.1",
-    "bootstrap": "^3.3.6",
-    "browserify-shim": "^3.8.12",
-    "components-font-awesome": "~4.6.1",
-    "filesaverjs": "~0.2.2",
-    "font-awesome": "~4.6.1",
-    "grunt": "~0.4.1",
-    "grunt-cli": "~0.1.13",
-    "grunt-contrib-cssmin": "~0.14.0",
-    "grunt-contrib-uglify": "~0.11.0",
-    "grunt-html2js": "~0.3.5",
-    "grunt-ng-annotate": "~1.0.1",
-    "jit-grunt": "^0.10.0",
-    "jquery": "^2.2.3",
-    "jquery-ui": "^1.10.5",
-    "lodash": "~4.11.1",
-    "ng-file-upload": "~10.0.2",
-    "ui-select": "~0.16.1",
-    "v-button": "git+https://git@github.com/whitef0x0/v-button.git"
-  },
-  "devDependencies": {
-    "grunt-browserify": "^5.0.0",
-    "http-server": "^0.9.0"
-  },
-  "browser": {
-    "jquery": "./node_modules/jquery/dist/jquery.js",
-    "jquery-ui-sortable": "./node_modules/jquery-ui/jquery-ui.js",
-    "angular": "./node_modules/angular/angular.js",
-    "ng-file-upload": "./node_modules/ng-file-upload/dist/ng-file-upload-all.js",
-    "angular-animate": "./node_modules/angular-animate/angular-animate.min.js",
-    "angular-bootstrap": "./node_modules/angular-bootstrap/ui-bootstrap.min.js",
-    "angular-busy": "./node_modules/angular-busy/dist/angular-busy.min.js",
-    "angular-input-stars": "./node_modules/angular-input-stars/angular-input-stars.js",
-    "angular-resource": "./node_modules/angular-resource/angular-resource.min.js",
-    "angular-sanitize": "./node_modules/angular-sanitize/angular-sanitize.min.js",
-    "angular-scroll": "./node_modules/angular-scroll/angular-scroll.min.js",
-    "angular-strap": "./node_modules/angular-strap/dist/angular-strap.min.js",
-    "angular-ui-date": "./node_modules/angular-ui-date/src/date.js",
-    "angular-ui-router": "./node_modules/angular-ui-router/release/angular-ui-router.min.js",
-    "angular-ui-utils": "./node_modules/angular-ui-utils/publish.js"
-  },
-  "browserify-shim": {
-    "jquery": {
-      "exports": "jQuery"
-    },
-    "jquery-ui": {
-      "depends": "jquery",
-      "exports": null
-    },
-    "angular": {
-      "exports": "angular",
-      "depends": "jQuery"
-    },
-    "ng-file-upload": {
-      "exports": "angular.module('ngFileUpload').name"
-    },
-    "angular-animate": {
-      "exports": "angular.module('ngAnimate').name"
-    },
-    "angular-bootstrap": {
-      "exports": "angular.module('ui.bootstrap').name"
-    },
-    "angular-busy": {
-      "exports": "angular.module('cgBusy').name"
-    },
-    "angular-input-stars": {
-      "exports": "angular.module('angular-input-stars').name"
-    },
-    "angular-resource": {
-      "exports": "angular.module('ngResource').name"
-    },
-    "angular-sanitize": {
-      "exports": "angular.module('ngSanitize').name"
-    },
-    "angular-scroll": {
-      "exports": "angular.module('duScroll').name"
-    },
-    "angular-strap": {
-      "exports": "angular.module('mgcrea.ngStrap').name"
-    },
-    "angular-ui-date": {
-      "depends": [
-        "angular",
-        "jquery-ui"
-      ],
-      "exports": "null"
-    },
-    "angular-ui-router": {
-      "depends": [
-        "angular"
-      ],
-      "exports": null
-    }
-  },
-  "browserify": {
-    "transform": [
-      "browserify-shim"
-    ]
-  }
-}
-
-},{}]},{},[2]);

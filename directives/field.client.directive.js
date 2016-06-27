@@ -30,7 +30,7 @@ angular.module('angular-tellform').directive('fieldDirective',
             'number',
             'natural'
         ];
-	if (__indexOf.call(supported_fields, type) >= 0) {
+	    if (__indexOf.call(supported_fields, type) >= 0) {
             templateUrl = templateUrl+type+'.html';
         }
 
@@ -56,7 +56,7 @@ angular.module('angular-tellform').directive('fieldDirective',
                     changeMonth: true,
                     altFormat: 'mm/dd/yyyy',
                     yearRange: '1900:-0',
-                    defaultDate: 0,
+                    defaultDate: 0
                 };
             }
 
@@ -82,7 +82,7 @@ angular.module('angular-tellform').directive('fieldDirective',
 				fieldType = 'textfield';
 			}
             var template = getTemplateUrl(fieldType);
-           	element.html(template).show();
+           	element.html(template);
             $compile(element.contents())(scope);
         }
     };

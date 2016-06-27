@@ -164,7 +164,7 @@ angular.module('angular-tellform').directive('fieldDirective',
             'number',
             'natural'
         ];
-	if (__indexOf.call(supported_fields, type) >= 0) {
+	    if (__indexOf.call(supported_fields, type) >= 0) {
             templateUrl = templateUrl+type+'.html';
         }
 
@@ -190,7 +190,7 @@ angular.module('angular-tellform').directive('fieldDirective',
                     changeMonth: true,
                     altFormat: 'mm/dd/yyyy',
                     yearRange: '1900:-0',
-                    defaultDate: 0,
+                    defaultDate: 0
                 };
             }
 
@@ -216,7 +216,7 @@ angular.module('angular-tellform').directive('fieldDirective',
 				fieldType = 'textfield';
 			}
             var template = getTemplateUrl(fieldType);
-           	element.html(template).show();
+           	element.html(template);
             $compile(element.contents())(scope);
         }
     };
@@ -275,7 +275,7 @@ module.exports = function ($rootScope, $timeout) {
 'use strict';
 
 angular.module('angular-tellform').directive('angularTellform',
-    ['$rootScope', '$state', 'myForm', 'Auth', function ($rootScope, $state, myForm, Auth) {
+    ['$rootScope', '$state', 'Auth', function ($rootScope, $state, Auth) {
     return {
         templateUrl: 'modules/forms/base/views/submit-form.client.view.html',
         restrict: 'E',
@@ -283,8 +283,11 @@ angular.module('angular-tellform').directive('angularTellform',
             myform:'='
         },
         controller: ["$document", "$window", "$scope", function($document, $window, $scope){
+            console.log('angular-tellform directive');
             $scope.authentication = Auth;
-            $scope.myform = myForm;
+            $scope.myform.visible_form_fields = _.filter($scope.myform.form_fields, function(field){
+                return (field.deletePreserved === false);
+            });
 
             if(!$scope.myform.isLive){
                 // Show navbar if form is not public AND user IS loggedin
@@ -328,6 +331,8 @@ angular.module('angular-tellform').directive('submitFormDirective', ['$http', 'T
             $scope.reloadForm = function(){
                 //Reset Form
                 $scope.myform.submitted = false;
+                
+                
                 $scope.myform.form_fields = _.chain($scope.myform.visible_form_fields).map(function(field){
                         field.fieldValue = '';
                         return field;
@@ -634,14 +639,15 @@ angular.module('angular-tellform').factory('Forms', ["$resource", "FORM_URL", fu
 }]);
 
 'use strict';
-
-angular.module('angular-tellform').factory('myForm', ["Forms", function(Forms) {
+/*
+angular.module('angular-tellform').factory('myForm', function(Forms) {
     var form = window.form;
     form.visible_form_fields = _.filter(form.form_fields, function(field){
         return (field.deletePreserved === false);
     });
     return form;
-}]);
+});
+*/
 'use strict';
 
 angular.module('angular-tellform').service('TimeCounter', function(){
