@@ -36,7 +36,14 @@ module.exports = function(grunt) {
 				  'dist/form.css': 'css/**/*.css'
 			  }
 		  }
-	    }
+	    },
+		browserify: {
+			dist: {
+				files: {
+					'dist/bundle.js': ['index.js', 'dist/template.js']
+				}
+			}
+		}
 	});
 
 	// Making grunt default to force in order not to break the project.

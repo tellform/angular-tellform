@@ -22,69 +22,19 @@ angular.module('myModule').controller('MyFormCtrl', function MyFormCtrl($scope) 
             "showStart": true
         },
         "form_fields": [{
-            "_id": "57193ffa2aa1f3ff5e205b5c",
-            "fieldValue": "no",
-            "fieldType": "textfield",
-            "title": "Can we get the link to your LinkedIn profile?",
-            "lastModified": "2016-04-22T23:02:46.019Z",
-            "created": "2016-04-21T21:02:50.583Z",
-            "validFieldTypes": ["textfield", "date", "email", "link", "legal", "url", "textarea", "statement", "welcome", "thankyou", "file", "dropdown", "scale", "rating", "radio", "checkbox", "hidden", "yes_no", "natural", "number"],
-            "deletePreserved": true,
-            "disabled": false,
-            "required": false,
-            "fieldOptions": [],
-            "description": ""
-        }, {
-            "_id": "57193ffa2aa1f3ff5e205b5c",
-            "fieldValue": "no",
-            "fieldType": "textfield",
-            "title": "Can we get the link to your LinkedIn profile?",
-            "lastModified": "2016-04-22T19:48:42.690Z",
-            "created": "2016-04-21T21:02:50.583Z",
-            "validFieldTypes": ["textfield", "date", "email", "link", "legal", "url", "textarea", "statement", "welcome", "thankyou", "file", "dropdown", "scale", "rating", "radio", "checkbox", "hidden", "yes_no", "natural", "number"],
-            "deletePreserved": true,
-            "disabled": false,
-            "required": false,
-            "fieldOptions": [],
-            "description": ""
-        }, {
-            "lastModified": "2016-04-22T23:02:46.016Z",
-            "title": "What's your last name?",
-            "fieldType": "textfield",
-            "fieldValue": "",
-            "_id": "57193fbb2aa1f3ff5e205b5a",
-            "created": "2016-04-21T21:01:47.132Z",
-            "validFieldTypes": ["textfield", "date", "email", "link", "legal", "url", "textarea", "statement", "welcome", "thankyou", "file", "dropdown", "scale", "rating", "radio", "checkbox", "hidden", "yes_no", "natural", "number"],
-            "deletePreserved": false,
-            "disabled": false,
-            "required": true,
-            "fieldOptions": [],
-            "description": ""
-        }, {
-            "_id": "57193ffa2aa1f3ff5e205b5c",
-            "fieldValue": "no",
-            "fieldType": "textfield",
-            "title": "Can we get the link to your LinkedIn profile?",
-            "lastModified": "2016-04-22T19:48:42.690Z",
-            "created": "2016-04-21T21:02:50.583Z",
-            "validFieldTypes": ["textfield", "date", "email", "link", "legal", "url", "textarea", "statement", "welcome", "thankyou", "file", "dropdown", "scale", "rating", "radio", "checkbox", "hidden", "yes_no", "natural", "number"],
-            "deletePreserved": true,
-            "disabled": false,
-            "required": false,
-            "fieldOptions": [],
-            "description": ""
-        }, {
             "lastModified": "2016-04-22T23:02:46.017Z",
             "title": "How would you rate your experience and knowledge of running split tests?",
             "fieldType": "rating",
             "fieldValue": 1,
             "_id": "571940102aa1f3ff5e205b5d",
-            "created": "2016-04-21T21:03:12.644Z",
             "validFieldTypes": ["textfield", "date", "email", "link", "legal", "url", "textarea", "statement", "welcome", "thankyou", "file", "dropdown", "scale", "rating", "radio", "checkbox", "hidden", "yes_no", "natural", "number"],
             "deletePreserved": false,
             "disabled": false,
             "required": true,
-            "fieldOptions": [],
+            "ratingOptions": {
+                "shape": "thumbs-up",
+                "steps": 5
+            },
             "description": ""
         }, {
             "lastModified": "2016-04-22T23:02:46.017Z",
@@ -92,12 +42,14 @@ angular.module('myModule').controller('MyFormCtrl', function MyFormCtrl($scope) 
             "fieldType": "rating",
             "fieldValue": 1,
             "_id": "571940222aa1f3ff5e205b5e",
-            "created": "2016-04-21T21:03:12.644Z",
             "validFieldTypes": ["textfield", "date", "email", "link", "legal", "url", "textarea", "statement", "welcome", "thankyou", "file", "dropdown", "scale", "rating", "radio", "checkbox", "hidden", "yes_no", "natural", "number"],
             "deletePreserved": false,
             "disabled": false,
             "required": true,
-            "fieldOptions": [],
+            "ratingOptions": {
+                "shape": "thumbs-up",
+                "steps": 5
+            },
             "description": ""
         }, {
             "_id": "57193ffa2aa1f3ff5e205b5c",
@@ -231,20 +183,10 @@ angular.module('myModule').controller('MyFormCtrl', function MyFormCtrl($scope) 
             "deletePreserved": false,
             "disabled": false,
             "required": true,
-            "fieldOptions": [],
-            "description": ""
-        }, {
-            "lastModified": "2016-04-22T23:02:46.021Z",
-            "title": "What's your first name?",
-            "fieldType": "textfield",
-            "fieldValue": "",
-            "_id": "57193fa92aa1f3ff5e205b59",
-            "created": "2016-04-21T21:01:29.219Z",
-            "validFieldTypes": ["textfield", "date", "email", "link", "legal", "url", "textarea", "statement", "welcome", "thankyou", "file", "dropdown", "scale", "rating", "radio", "checkbox", "hidden", "yes_no", "natural", "number"],
-            "deletePreserved": false,
-            "disabled": false,
-            "required": true,
-            "fieldOptions": [],
+            "ratingOptions": {
+                "shape": "Star",
+                "steps": 5
+            },
             "description": ""
         }, {
             "lastModified": "2016-04-22T23:02:46.021Z",

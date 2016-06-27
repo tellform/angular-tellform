@@ -65,3 +65,7 @@ angular.module('angular-tellform').filter('formValidity',
             return 0;
         };
     });
+
+angular.module('angular-tellform').value('SendVisitorData', {
+    send: function(){}
+});

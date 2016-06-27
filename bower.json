@@ -11,7 +11,6 @@
     "Samuel Laulhau <sam@lalop.co> (https://samuellaulhau.fr)"
   ],
   "license": "MIT",
-<<<<<<< HEAD
   "keywords": [
     "forms",
     "tellform",
@@ -58,7 +57,9 @@
     "restangular": "~1.5.2",
     "v-button": "^1.1.1",
     "ui-select": "angular-ui-select#^0.16.1",
-    "angular-ui-router": "^0.3.1"
+    "angular-ui-router": "^0.3.1",
+    "angular-translate": "^2.11.0",
+    "js-yaml": "^3.6.1"
   },
   "resolutions": {
     "angular-animate": "^1.5.6",
