@@ -281,7 +281,7 @@ and then open the demo/index.html file for an example form.
 
 ## Contributing
 
-When pushing submitting a PR, please make sure to delete your /dist directory. 
+When submitting a PR, please make sure to delete your /dist directory. 
 
 ## License
 
