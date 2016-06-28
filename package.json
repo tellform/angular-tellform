@@ -1,45 +1,61 @@
 {
   "name": "angular-tellform",
   "description": "Frontend UI for Tellform",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "homepage": "https://github.com/tellform/angular-tellform",
   "authors": [
     "David Baldwynn <polydaic@gmail.com> (http://baldwynn.me)",
     "Samuel Laulhau <sam@lalop.co> (https://samuellaulhau.fr)"
   ],
-  "private": true,
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/tellform/angular-tellform.git"
   },
+  "main": "publish.js",
   "engines": {
     "node": "~5.0.0",
     "npm": "~2.11.2"
   },
-  "scripts": {
-
-    "postinstall": "node node_modules/.bin/bower install --config.interactive=false; node node_modules/.bin/grunt build"
-  },
+  "keywords": [
+    "tellform",
+    "forms",
+    "formly",
+    "angularjs",
+    "angular forms",
+    "typeform"
+  ],
+  "scripts": {},
   "dependencies": {
-    "bower": "~1.6.5",
-    "grunt": "~0.4.1",
-    "grunt-cli": "~0.1.13",
-    "grunt-contrib-cssmin": "~0.14.0",
-    "grunt-contrib-uglify": "~0.11.0",
-    "grunt-html2js": "~0.3.5",
-    "grunt-ng-annotate": "~1.0.1",
-    "jit-grunt": "^0.10.0",
+    "angular": "^1.5.7",
+    "angular-animate": "^1.5.7",
+    "angular-bootstrap": "^0.12.2",
+    "angular-busy": "^4.1.3",
+    "angular-input-stars": "^1.5.5",
+    "angular-resource": "^1.5.7",
+    "angular-sanitize": "^1.5.7",
+    "angular-scroll": "^1.0.0",
+    "angular-strap": "^2.3.9",
+    "angular-translate": "^2.11.0",
+    "angular-ui-date": "^1.1.1",
+    "angular-ui-router": "^0.3.1",
+    "angular-ui-utils": "^0.1.1",
     "jquery": "^2.2.3",
     "jquery-ui": "^1.10.5",
     "lodash": "~4.11.1",
-    "ng-file-upload": "~10.0.2",
+    "ng-file-upload": "^10.0.4",
     "ui-select": "~0.16.1",
     "v-button": "git+https://git@github.com/whitef0x0/v-button.git"
   },
   "devDependencies": {
     "grunt-browserify": "^5.0.0",
-    "http-server": "^0.9.0"
+    "http-server": "^0.9.0",
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-cssmin": "~0.14.0",
+    "grunt-contrib-uglify": "~0.11.0",
+    "grunt-html2js": "~0.3.5",
+    "grunt-ng-annotate": "~1.0.1",
+    "jit-grunt": "^0.10.0"
   },
   "browser": {
     "jquery": "./node_modules/jquery/dist/jquery.js",
