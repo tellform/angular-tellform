@@ -14,6 +14,10 @@ via bower
 
 ```bower install angular-tellform```
 
+via npm
+
+```npm install angular-tellform```
+
 ## Quick Example
 
 This serves as a quick guide to setting up and using angular-tellform in a small angular project. If you are looking for API documentation, please refer to the next section instead.
