@@ -364,7 +364,7 @@ angular.module('angular-tellform').directive('fieldDirective', ['$http', '$compi
 					$rootScope.nextField();
 				}
 			};
-            
+
             scope.setActiveField = $rootScope.setActiveField;
 
             //Set format only if field is a date
@@ -677,7 +677,7 @@ angular.module('angular-tellform').directive('submitFormDirective', ['$http', 'T
                     if(animateScroll){
                         $scope.noscroll=true;
                         setTimeout(function() {
-                            $document.scrollToElement(angular.element('.activeField'), -10, 200).then(function() {
+                            $document.scrollToElement(document.getElementsByClassName('activeField'), -10, 200).then(function() {
 								$scope.noscroll = false;
 								setTimeout(function() {
 									if (document.querySelectorAll('.activeField .focusOn').length) {
