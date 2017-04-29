@@ -206,7 +206,7 @@ The object containing the CSS styles and colors for the form
 	
 	The hex color of the button background
 	
-#### colors.anwserColor
+#### colors.answerColor
 
 	**Required**
 	
