@@ -190,7 +190,7 @@ Type: `Object`
 
 The object containing the CSS styles and colors for the form
 
-####design.colors.buttonTextColor
+#### design.colors.buttonTextColor
 
 	**Required**
 	
@@ -198,7 +198,7 @@ The object containing the CSS styles and colors for the form
 	
 	The hex color of the button text
 	
-####design.colors.buttonColor
+#### design.colors.buttonColor
 
 	**Required**
 	
@@ -206,7 +206,7 @@ The object containing the CSS styles and colors for the form
 	
 	The hex color of the button background
 	
-####colors.anwserColor
+#### colors.anwserColor
 
 	**Required**
 	
@@ -214,7 +214,7 @@ The object containing the CSS styles and colors for the form
 	
 	The hex color of the answer (input field) text.
 
-####design.colors.questionColor
+#### design.colors.questionColor
 
 	**Required**
 	
@@ -222,7 +222,7 @@ The object containing the CSS styles and colors for the form
 	
 	The hex color of the question text.
 
-####design.colors.backgroundColor
+#### design.colors.backgroundColor
 
 	**Required**
 	
